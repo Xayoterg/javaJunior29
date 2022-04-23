@@ -1,0 +1,48 @@
+package lesson11;
+
+public abstract class AbstractAnimal implements ZooAnimal {
+    private int age;
+    private String name;
+    private String description;
+
+
+    public AbstractAnimal() {
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Override
+    public void run() {
+        System.out.println(this.name+"бегать");
+
+    }
+
+    @Override
+    public void jump() {
+        System.out.println(this.name+"пригать");
+
+    }
+    public abstract void printHave();
+}
