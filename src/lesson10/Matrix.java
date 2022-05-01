@@ -25,12 +25,13 @@ public class Matrix implements IMatrix {
     @Override
     public double getValueAt(int rowIndex, int colIndex) throws IndexOutOfBoundsException {
         if (rowIndex >= this.getRows() || rowIndex < 0) {
-            System.out.println("неверный индекс строки!!!" + rowIndex);
-            return -1;
+            //   System.out.println("неверный индекс строки!!!" + rowIndex);
+            //  return -1;
+            throw new IndexOutOfBoundsException();
         }
         if (colIndex >= this.getRows() || colIndex < 0) {
-            System.out.println("неверный индекс строки!!!" + colIndex);
-            return -1;
+            //   System.out.println("неверный индекс строки!!!" + colIndex);
+            // return -1;
         }
         return matrix[rowIndex][colIndex];
     }
@@ -39,13 +40,21 @@ public class Matrix implements IMatrix {
     public void setValueAt(int rowIndex, int colIndex, double value) throws IndexOutOfBoundsException {
 
 
+        if (rowIndex >= this.getRows() || colIndex < 0) {
+
+        }
+        if (colIndex >= this.getRows() || colIndex < 0) {
+
+        }
+        return;
     }
 
     @Override
     public IMatrix add(IMatrix otherMatrix) throws IllegalArgumentException, NullPointerException {
 
         if (this.getRows() != otherMatrix.getRows()) {
-            System.out.println("количество строк не совпадают!!!");
+            //  System.out.println("количество строк не совпадают!!!");
+
             return null;
         }
 
@@ -86,15 +95,13 @@ public class Matrix implements IMatrix {
 
 
         return null;
-        }
-
+    }
 
 
     @Override
     public void fillMatrix(double value) {
 
-            }
-
+    }
 
 
     @Override
